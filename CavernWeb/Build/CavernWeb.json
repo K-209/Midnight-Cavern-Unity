@@ -1,0 +1,17 @@
+{
+"companyName": "KayTwenty",
+"productName": "Midnight Cavern",
+"productVersion": "0.4",
+"dataUrl": "CavernWeb.data.unityweb",
+"wasmCodeUrl": "CavernWeb.wasm.code.unityweb",
+"wasmFrameworkUrl": "CavernWeb.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "CavernWeb.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.15f1"
+}
