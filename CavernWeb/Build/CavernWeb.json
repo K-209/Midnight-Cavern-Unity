@@ -1,7 +1,7 @@
 {
 "companyName": "KayTwenty",
 "productName": "Midnight Cavern",
-"productVersion": "0.4",
+"productVersion": "0.4.1",
 "dataUrl": "CavernWeb.data.unityweb",
 "wasmCodeUrl": "CavernWeb.wasm.code.unityweb",
 "wasmFrameworkUrl": "CavernWeb.wasm.framework.unityweb",
