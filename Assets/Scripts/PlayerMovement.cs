@@ -8,23 +8,24 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
+    public VectorValue startingPosition;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
-    }
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", -1);
+        transform.position = startingPosition.initialValue;
+        }
 
     // Update is called once per frame
-    void Update()
-    {
-        change = Vector3.zero;
-        change.x = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
-        change.y = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
-
+    void FixedUpdate() {
+        change.x = Input.GetAxisRaw("Horizontal");
+        change.y = Input.GetAxisRaw("Vertical");
         UpdateAnimationAndMove();
-    }
+        }
+
     void UpdateAnimationAndMove()
     {
         if (change != Vector3.zero)
@@ -39,8 +40,11 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("moving", false);
         }
     }
+    
     void MoveCharacter()
     {
-        transform.Translate(new Vector3(change.x, change.y));
+        change.Normalize();
+        myRigidbody.MovePosition(
+            transform.position + change * speed * Time.fixedDeltaTime);
     }
 }
